@@ -1,0 +1,163 @@
+================
+js block
+================
+%js
+	var x = 1
+
+---
+
+(source_file
+  (js_block
+    (block_body)))
+
+================
+js block with empty line
+================
+%js
+	var x = 1
+
+	function run() {}
+
+---
+
+(source_file
+  (js_block
+    (block_body)
+    (block_empty_line)
+    (block_body)))
+
+================
+css block
+================
+%css
+	.foo { color: red }
+
+---
+
+(source_file
+  (css_block
+    (block_body)))
+
+================
+view directive
+================
+%view myView
+
+---
+
+(source_file
+  (view_directive
+    name: (view_name)))
+
+================
+el directive
+================
+%el My-custom
+
+---
+
+(source_file
+  (el_directive
+    name: (element_name)))
+
+================
+el directive with params
+================
+%el My-custom foo bar
+
+---
+
+(source_file
+  (el_directive
+    name: (element_name)
+    params: (element_params)))
+
+================
+plugin directive
+================
+%def something
+
+---
+
+(source_file
+  (plugin_directive
+    (plugin_keyword)))
+
+================
+comment double slash
+================
+// comment text
+
+---
+
+(source_file
+  (comment))
+
+================
+comment single slash
+================
+/ comment text
+
+---
+
+(source_file
+  (comment))
+
+================
+binding line
+================
+;txt value
+
+---
+
+(source_file
+  (binding_line
+    (binding)))
+
+================
+event line
+================
+@click handler
+
+---
+
+(source_file
+  (event_line
+    (event)))
+
+================
+raw text line
+================
+	= raw text here
+
+---
+
+(source_file
+  (raw_text_line))
+
+================
+template line with text
+================
+	button Hello
+
+---
+
+(source_file
+  (template_line
+    (selector
+      (tag_name))
+    (text_content)))
+
+================
+template line with binding
+================
+div ;txt value
+
+---
+
+(source_file
+  (template_line
+    (selector
+      (tag_name))
+    (binding)
+    (text_content)))

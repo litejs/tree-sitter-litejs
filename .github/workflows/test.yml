@@ -1,0 +1,19 @@
+name: Test
+on: [ push, pull_request, workflow_dispatch ]
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+      - run: npm install
+      - run: npx tree-sitter generate
+      - run: npx tree-sitter test
+  Analyze:
+    uses: litejs/.github/.github/workflows/analyze.yml@main
+  Release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [Analyze, Test]
+    uses: litejs/.github/.github/workflows/release.yml@main
+    secrets: inherit
+

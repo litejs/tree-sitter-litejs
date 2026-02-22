@@ -1,0 +1,18 @@
+{
+  "grammars": [
+    {
+      "name": "litejs",
+      "camelcase": "LiteJS",
+      "scope": "source.litejs",
+      "path": ".",
+      "file-types": [
+        "ui"
+      ],
+      "highlights": "queries/highlights.scm",
+      "injections": "queries/injections.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0"
+  }
+}
