@@ -29,12 +29,19 @@ mkdir -p ~/.config/helix/runtime/queries/litejs
 cp queries/*.scm ~/.config/helix/runtime/queries/litejs/
 ```
 
+### VS Code
+
+```sh
+ln -s /path/to/tree-sitter-litejs/editors/vscode ~/.vscode/extensions/litejs
+```
+
+Restart VS Code after installing.
+
 ### Zed
 
-Install from the [Zed extension registry](https://zed.dev/extensions) by searching for "LiteJS",
-or install as a dev extension from the `editors/zed` directory.
+Install as a dev extension from the `editors/zed` directory.
 
-To build the grammar locally for development:
+To build the grammar locally:
 
 ```sh
 cd editors/zed

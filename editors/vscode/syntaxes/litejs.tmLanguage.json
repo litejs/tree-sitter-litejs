@@ -1,0 +1,129 @@
+{
+  "name": "LiteJS",
+  "scopeName": "source.litejs",
+  "patterns": [
+    { "include": "#js-block" },
+    { "include": "#css-block" },
+    { "include": "#comment" },
+    { "include": "#plugin-line" },
+    { "include": "#raw-text" },
+    { "include": "#selector-with-text" },
+    { "include": "#binding" },
+    { "include": "#event" }
+  ],
+  "repository": {
+    "js-block": {
+      "begin": "^(\\s*)(%js)\\s*$",
+      "beginCaptures": {
+        "2": { "name": "keyword.control.litejs" }
+      },
+      "while": "^(\\t|\\s*$)",
+      "contentName": "source.js",
+      "patterns": [
+        { "include": "source.js" }
+      ]
+    },
+    "css-block": {
+      "begin": "^(\\s*)(%css)\\s*$",
+      "beginCaptures": {
+        "2": { "name": "keyword.control.litejs" }
+      },
+      "while": "^(\\t|\\s*$)",
+      "contentName": "source.css",
+      "patterns": [
+        { "include": "source.css" }
+      ]
+    },
+    "comment": {
+      "match": "^(\\s*)(//|/)(.*)$",
+      "name": "comment.line.litejs"
+    },
+    "plugin-line": {
+      "match": "^\\s*(%[a-z]+)",
+      "captures": {
+        "1": { "name": "keyword.control.litejs" }
+      }
+    },
+    "raw-text": {
+      "match": "^(\\s*)(= |\\\\ )(.*)",
+      "captures": {
+        "2": { "name": "keyword.operator.litejs" },
+        "3": { "name": "string.unquoted.litejs" }
+      }
+    },
+    "selector-with-text": {
+      "match": "^(\\s*)((?:[^\\s;@\\[]|\\[[^\\]]*\\])+(?:\\s*>\\s*(?:[^\\s;@\\[]|\\[[^\\]]*\\])+)*)(?:\\s+((?=[^;@])\\S.*))?",
+      "captures": {
+        "2": {
+          "patterns": [
+            {
+              "match": "\\.[\\w-]+",
+              "name": "entity.other.attribute-name.class.css"
+            },
+            {
+              "match": "#[\\w-]+",
+              "name": "entity.other.attribute-name.id.css"
+            },
+            {
+              "begin": "\\[",
+              "end": "\\]",
+              "beginCaptures": {
+                "0": { "name": "punctuation.definition.entity.begin.bracket.square.css" }
+              },
+              "endCaptures": {
+                "0": { "name": "punctuation.definition.entity.end.bracket.square.css" }
+              },
+              "patterns": [
+                {
+                  "match": "([\\w-]+)([~|^$*]?=)(\"[^\"]*\")",
+                  "captures": {
+                    "1": { "name": "entity.other.attribute-name.css" },
+                    "2": { "name": "keyword.operator.pattern.css" },
+                    "3": { "name": "string.quoted.double.css" }
+                  }
+                },
+                {
+                  "match": "([\\w-]+)([~|^$*]?=)('[^']*')",
+                  "captures": {
+                    "1": { "name": "entity.other.attribute-name.css" },
+                    "2": { "name": "keyword.operator.pattern.css" },
+                    "3": { "name": "string.quoted.single.css" }
+                  }
+                },
+                {
+                  "match": "([\\w-]+)([~|^$*]?=)([^\\]]+)",
+                  "captures": {
+                    "1": { "name": "entity.other.attribute-name.css" },
+                    "2": { "name": "keyword.operator.pattern.css" },
+                    "3": { "name": "string.unquoted.attribute-value.css" }
+                  }
+                },
+                {
+                  "match": "[\\w-]+",
+                  "name": "entity.other.attribute-name.css"
+                }
+              ]
+            },
+            {
+              "match": "[a-zA-Z][\\w-]*",
+              "name": "entity.name.tag.css"
+            },
+            {
+              "match": ">",
+              "name": "keyword.operator.combinator.css"
+            }
+          ]
+        },
+        "3": { "name": "string.unquoted.litejs" }
+      }
+    },
+    "binding": {
+      "match": ";[a-zA-Z$]\\w*[!:]?",
+      "name": "keyword.other.binding.litejs"
+    },
+    "event": {
+      "match": "@[a-zA-Z]\\w*[!:]?",
+      "name": "entity.other.attribute-name.litejs"
+    }
+  }
+}

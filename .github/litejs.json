@@ -2,7 +2,9 @@
   "release": {
     "setVersion": [
       "package.json#version",
-      "tree-sitter.json#metadata.version"
+      "tree-sitter.json#metadata.version",
+      "editors/vscode/package.json#version",
+      "editors/zed/extension.toml#version"
     ],
     "build": false,
     "install": false

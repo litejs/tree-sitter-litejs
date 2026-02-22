@@ -1,0 +1,37 @@
+{
+  "name": "litejs",
+  "displayName": "LiteJS",
+  "description": "LiteJS UI template support",
+  "version": "26.2.0",
+  "publisher": "litejs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/litejs/tree-sitter-litejs"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "litejs",
+        "aliases": ["LiteJS"],
+        "extensions": [".ui"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "litejs",
+        "scopeName": "source.litejs",
+        "path": "./syntaxes/litejs.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.js": "javascript",
+          "source.css": "css"
+        }
+      }
+    ]
+  }
+}
