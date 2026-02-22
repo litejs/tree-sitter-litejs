@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-litejs",
-  "version": "26.2.0",
+  "version": "26.2.1",
   "description": "Tree-sitter grammar for LiteJS UI templates",
   "license": "MIT",
   "author": "Lauri Rooden <lauri@rooden.ee>",
