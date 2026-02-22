@@ -1,7 +1,7 @@
 id = "litejs"
 name = "LiteJS"
-description = "LiteJS UI template support"
-version = "26.2.0"
+description = "LiteJS UI template support for Zed"
+version = "26.2.1"
 authors = ["Lauri Rooden"]
 schema_version = 1
 repository = "https://github.com/litejs/tree-sitter-litejs"

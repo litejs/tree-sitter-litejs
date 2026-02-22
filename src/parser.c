@@ -1836,8 +1836,8 @@ TS_PUBLIC const TSLanguage *tree_sitter_litejs(void) {
     .name = "litejs",
     .max_reserved_word_set_size = 0,
     .metadata = {
-      .major_version = 0,
-      .minor_version = 1,
+      .major_version = 26,
+      .minor_version = 2,
       .patch_version = 0,
     },
   };

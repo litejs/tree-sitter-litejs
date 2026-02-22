@@ -39,12 +39,11 @@ Restart VS Code after installing.
 
 ### Zed
 
-Install as a dev extension from the `editors/zed` directory.
+Install as a dev extension from the repository root.
 
 To build the grammar locally:
 
 ```sh
-cd editors/zed
 mkdir -p grammars/litejs
 cd grammars/litejs
 git clone https://github.com/litejs/tree-sitter-litejs .

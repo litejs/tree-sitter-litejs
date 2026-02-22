@@ -4,9 +4,9 @@
       "package.json#version",
       "tree-sitter.json#metadata.version",
       "editors/vscode/package.json#version",
-      "editors/zed/extension.toml#version"
+      "extension.toml#version"
     ],
-    "build": false,
+    "build": "npx tree-sitter generate",
     "install": false
   }
 }

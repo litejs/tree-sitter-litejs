@@ -11,7 +11,7 @@
     "litejs"
   ],
   "scripts": {
-    "test": "true"
+    "test": "npx tree-sitter test"
   },
   "tree-sitter": [
     {

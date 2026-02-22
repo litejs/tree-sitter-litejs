@@ -12,13 +12,19 @@
   "engines": {
     "vscode": "^1.60.0"
   },
-  "categories": ["Programming Languages"],
+  "categories": [
+    "Programming Languages"
+  ],
   "contributes": {
     "languages": [
       {
         "id": "litejs",
-        "aliases": ["LiteJS"],
-        "extensions": [".ui"],
+        "aliases": [
+          "LiteJS"
+        ],
+        "extensions": [
+          ".ui"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
