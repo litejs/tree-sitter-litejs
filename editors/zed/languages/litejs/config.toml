@@ -1,0 +1,6 @@
+name = "LiteJS"
+grammar = "litejs"
+path_suffixes = ["ui"]
+line_comments = ["/"]
+tab_size = 4
+hard_tabs = true

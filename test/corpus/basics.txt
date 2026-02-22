@@ -39,49 +39,48 @@ css block
     (block_body)))
 
 ================
-view directive
+plugin line - view
 ================
 %view myView
 
 ---
 
 (source_file
-  (view_directive
-    name: (view_name)))
+  (plugin_line
+    (plugin_name)))
 
 ================
-el directive
+plugin line - el
 ================
 %el My-custom
 
 ---
 
 (source_file
-  (el_directive
-    name: (element_name)))
+  (plugin_line
+    (plugin_name)))
 
 ================
-el directive with params
+plugin line - el with params
 ================
 %el My-custom foo bar
 
 ---
 
 (source_file
-  (el_directive
-    name: (element_name)
-    params: (element_params)))
+  (plugin_line
+    (plugin_name)))
 
 ================
-plugin directive
+plugin line - def
 ================
 %def something
 
 ---
 
 (source_file
-  (plugin_directive
-    (plugin_keyword)))
+  (plugin_line
+    (plugin_name)))
 
 ================
 comment double slash
@@ -104,36 +103,40 @@ comment single slash
   (comment))
 
 ================
-binding line
+binding
 ================
 ;txt value
 
 ---
 
 (source_file
-  (binding_line
-    (binding)))
+  (template_line
+    (binding)
+    (binding_args)))
 
 ================
-event line
+event
 ================
 @click handler
 
 ---
 
 (source_file
-  (event_line
-    (event)))
+  (template_line
+    (event)
+    (binding_args)))
 
 ================
-raw text line
+raw text
 ================
 	= raw text here
 
 ---
 
 (source_file
-  (raw_text_line))
+  (template_line
+    (raw_text
+      (text_content))))
 
 ================
 template line with text
@@ -144,8 +147,7 @@ template line with text
 
 (source_file
   (template_line
-    (selector
-      (tag_name))
+    (selector)
     (text_content)))
 
 ================
@@ -157,7 +159,30 @@ div ;txt value
 
 (source_file
   (template_line
-    (selector
-      (tag_name))
+    (selector)
     (binding)
-    (text_content)))
+    (binding_args)))
+
+================
+complex selector
+================
+h1.foo.bar:selected[lang=en][title="Hello World"]
+
+---
+
+(source_file
+  (template_line
+    (selector)))
+
+================
+selector with inline binding
+================
+input.field[type=text] ;val formData
+
+---
+
+(source_file
+  (template_line
+    (selector)
+    (binding)
+    (binding_args)))

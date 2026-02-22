@@ -1,0 +1,11 @@
+id = "litejs"
+name = "LiteJS"
+description = "LiteJS UI template support"
+version = "0.1.0"
+authors = ["Lauri Rooden"]
+schema_version = 1
+repository = "https://github.com/litejs/tree-sitter-litejs"
+
+[grammars.litejs]
+repository = "https://github.com/litejs/tree-sitter-litejs"
+rev = "main"

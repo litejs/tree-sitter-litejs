@@ -1,0 +1,10 @@
+{
+  "release": {
+    "setVersion": [
+      "package.json#version",
+      "tree-sitter.json#metadata.version"
+    ],
+    "build": false,
+    "install": false
+  }
+}

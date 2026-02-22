@@ -29,6 +29,22 @@ mkdir -p ~/.config/helix/runtime/queries/litejs
 cp queries/*.scm ~/.config/helix/runtime/queries/litejs/
 ```
 
+### Zed
+
+Install from the [Zed extension registry](https://zed.dev/extensions) by searching for "LiteJS",
+or install as a dev extension from the `editors/zed` directory.
+
+To build the grammar locally for development:
+
+```sh
+cd editors/zed
+mkdir -p grammars/litejs
+cd grammars/litejs
+git clone https://github.com/litejs/tree-sitter-litejs .
+npx tree-sitter generate
+npx tree-sitter build --wasm -o ../../litejs.wasm
+```
+
 ### Neovim
 
 Add to `init.lua` (requires [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)):
